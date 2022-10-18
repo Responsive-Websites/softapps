@@ -10,6 +10,7 @@
     padding: rem(12) 0px;
   }
   &__logo {
+    display: block;
     img {
       width: rem(192);
       @include adpv('width', 1, 192, 90);
@@ -136,6 +137,10 @@
     &::placeholder {
       color: #726f85;
     }
+
+    &:focus {
+      outline: none;
+    }
   }
 
   &__search-button {
@@ -158,15 +163,39 @@
     position: absolute;
     opacity: 0;
     visibility: hidden;
+    top: 0px;
+    left: 0px;
+    transition: all 0.2s ease 0s;
+
+    &._active {
+      top: calc(100% + rem(10));
+      visibility: visible;
+      opacity: 1;
+    }
   }
 
   &__list {
+    background-color: #f7f7f7;
+    padding: rem(16) rem(12);
+    border-radius: rem(10);
+    display: grid;
+    gap: rem(10);
   }
 
   &__item {
   }
 
   &__link {
+    display: block;
+    padding: rem(5) 0px;
+    font-size: rem(16);
+    transition: color 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #7f20f9;
+      }
+    }
   }
 }
 

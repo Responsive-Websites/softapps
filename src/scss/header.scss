@@ -49,7 +49,7 @@
       width: 80%;
       height: 100%;
       overflow: auto;
-      background-color: #a58ada;
+      background-color: #a765fb;
       top: 0;
       left: 100%;
       z-index: 4;
@@ -71,7 +71,7 @@
         position: fixed;
         width: 80%;
         height: rem(70);
-        background-color: black;
+        background-color: #a765fb;
         top: 0;
         left: 100%;
         transition: all 0.3s ease 0s;
@@ -101,7 +101,7 @@
       align-items: center;
       justify-content: flex-start;
       flex-direction: column;
-      padding: rem(80) rem(30);
+      padding: rem(100) rem(30) rem(40) rem(30);
     }
   }
 
@@ -121,6 +121,11 @@
       &:hover {
         color: #7f20f9;
       }
+    }
+
+    @media (max-width: $tablet) {
+      font-size: rem(18);
+      color: #ffffff;
     }
   }
 
@@ -288,6 +293,9 @@
       visibility: visible;
       opacity: 1;
     }
+    @media (max-width: $tablet) {
+      display: none;
+    }
   }
 
   &__list {
@@ -296,6 +304,19 @@
     border-radius: rem(10);
     display: grid;
     gap: rem(10);
+    @media (max-width: $tablet) {
+      background-color: transparent;
+      display: flex;
+
+      @include adpv('gap', 1, 24, 16);
+      row-gap: rem(18);
+
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      padding: rem(0) rem(30);
+      padding-bottom: rem(30);
+    }
   }
 
   &__item {
@@ -311,6 +332,12 @@
       &:hover {
         color: #7f20f9;
       }
+    }
+
+    @media (max-width: $tablet) {
+      font-size: rem(18);
+      color: #ffffff;
+      font-weight: 500;
     }
   }
 }

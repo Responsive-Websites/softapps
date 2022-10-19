@@ -299,13 +299,16 @@
   }
 
   &__list {
-    background-color: #f7f7f7;
     padding: rem(16) rem(12);
     border-radius: rem(10);
     display: grid;
     gap: rem(10);
+    @media (min-width: $tablet) {
+      background-color: #ffffff;
+      box-shadow: 4px 4px 8px 0px rgba(127, 32, 249, 0.2);
+    }
+
     @media (max-width: $tablet) {
-      background-color: transparent;
       display: flex;
 
       @include adpv('gap', 1, 24, 16);

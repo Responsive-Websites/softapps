@@ -1,3 +1,127 @@
-//====================================================================================================
+.footer {
+  background: #f7f7f7;
+  &__container {
+  }
 
-//====================================================================================================
+  &__inner {
+    padding: rem(24) 0px rem(22) 0px;
+    border-bottom: 1px solid #e2e1e2;
+  }
+
+  &__spollers {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: rem(20);
+    flex-wrap: wrap;
+    @media (max-width: $tablet) {
+      row-gap: rem(40);
+    }
+  }
+
+  &__column {
+    flex: 1 1 calc(25% - rem(20));
+
+    @media (max-width: $tablet) {
+      flex: 1 1 calc(50% - rem(20));
+    }
+
+    @media (max-width: em(560)) {
+      flex: 1 1 100%;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: 133%;
+    color: #000000;
+    padding: rem(8) 0px;
+    width: 100%;
+    text-align: left;
+    @media (min-width: $mobile) {
+      cursor: auto;
+    }
+    @media (max-width: $tablet) {
+      text-align: center;
+    }
+    &::before {
+      @extend %ic;
+      content: '\e900';
+      display: none;
+    }
+    @media (max-width: em(560)) {
+      position: relative;
+      padding-left: rem(30);
+      padding-right: rem(30);
+      &::before {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: rem(10);
+        transition: transform 0.3s ease 0s;
+        transform: translate(0px, -50%) rotate(-90deg);
+      }
+
+      &._spoller-active {
+        &::before {
+          transform: translate(0px, -50%) rotate(90deg);
+        }
+      }
+    }
+  }
+
+  &__column-body {
+    display: grid;
+    gap: rem(6);
+    &_social {
+      display: flex;
+      align-items: center;
+      gap: rem(8);
+    }
+    @media (max-width: $tablet) {
+      justify-content: center;
+      justify-items: center;
+    }
+    @media (max-width: em(560)) {
+      padding-top: rem(20);
+      padding-bottom: rem(20);
+      gap: rem(10);
+    }
+  }
+  &__column-item {
+  }
+  &__column-link {
+    font-size: rem(14);
+    line-height: 143%;
+    color: #726f85;
+    transition: color 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #6f21f9;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      @include adpv('font-size', 1, 14, 18, 767);
+    }
+
+    &_mod {
+      color: #2029f9;
+      @media (any-hover: hover) {
+        &:hover {
+          color: #2029f9;
+          text-decoration: underline !important;
+        }
+      }
+    }
+
+    @media (max-width: em(560)) {
+      padding: rem(10) 0px;
+      display: inline-block;
+    }
+  }
+  &__bottom {
+  }
+}

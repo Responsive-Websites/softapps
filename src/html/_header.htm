@@ -7,22 +7,24 @@
       <div class="header__menu menu">
         <div class="menu__desktop-menu desktop-menu">
           <div class="desktop-menu__inner">
-            <div class="desktop-menu__burger">
-              <div class="desktop-menu__burger-icon"><span></span></div>
-              <p class="desktop-menu__burger-text">Каталог</p>
+            <div class="desktop-menu__wrapper">
+              <div class="desktop-menu__burger">
+                <div class="desktop-menu__burger-icon"><span></span></div>
+                <p class="desktop-menu__burger-text">Каталог</p>
+              </div>
+              <form action="#" class="desktop-menu__form">
+                <input
+                  autocomplete="on"
+                  type="text"
+                  name="form[]"
+                  placeholder="Поиск по каталогу"
+                  class="desktop-menu__input"
+                />
+                <button type="submit" class="desktop-menu__search-button">
+                  <img src="@img/icons/search.svg" alt="search" />
+                </button>
+              </form>
             </div>
-            <form action="#" class="desktop-menu__form">
-              <input
-                autocomplete="on"
-                type="text"
-                name="form[]"
-                placeholder="Поиск по каталогу"
-                class="desktop-menu__input"
-              />
-              <button type="submit" class="desktop-menu__search-button">
-                <img src="@img/icons/search.svg" alt="search" />
-              </button>
-            </form>
             <div class="desktop-menu__modal-menu">
               <ul class="desktop-menu__list">
                 <li class="desktop-menu__item">

@@ -9,6 +9,10 @@
 
     @include adpv('gap', 1, 32, 14);
     padding: rem(12) 0px;
+    transition: transform 0.3s ease 0s;
+    @media (min-width: em(1426)) {
+      transform: translate(rem(-56), 0px);
+    }
   }
   &__logo {
     align-self: center;
@@ -29,11 +33,60 @@
   gap: rem(20);
   &__desktop-menu {
     flex: 0 1 rem(546);
+
+    @media (max-width: $tablet) {
+      flex: 1 1 auto;
+      padding: 0px rem(20);
+    }
   }
 
   &__body {
     flex: 1 0 rem(400);
     padding-top: rem(16);
+
+    @media (max-width: $tablet) {
+      position: fixed;
+      width: 80%;
+      height: 100%;
+      overflow: auto;
+      background-color: #a58ada;
+      top: 0;
+      left: 100%;
+      z-index: 4;
+      padding: 0px;
+      transition: left 0.3s ease 0s;
+      @media (max-width: em(540)) {
+        width: 100%;
+      }
+      .menu-open & {
+        left: 20%;
+
+        @media (max-width: em(540)) {
+          left: 0px;
+        }
+      }
+
+      &::before {
+        content: '';
+        position: fixed;
+        width: 80%;
+        height: rem(70);
+        background-color: black;
+        top: 0;
+        left: 100%;
+        transition: all 0.3s ease 0s;
+        @media (max-width: em(540)) {
+          width: 100%;
+        }
+        .menu-open & {
+          left: 20%;
+
+          @media (max-width: em(540)) {
+            left: 0px;
+          }
+        }
+      }
+    }
   }
 
   &__list {
@@ -43,6 +96,13 @@
     flex-wrap: wrap;
     @include adpv('gap', 1, 24, 16);
     row-gap: rem(18);
+
+    @media (max-width: $tablet) {
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      padding: rem(80) rem(30);
+    }
   }
 
   &__item {
@@ -80,6 +140,10 @@
     padding: rem(2) rem(2) rem(2) rem(2);
     background: #f7f7f7;
     border-radius: rem(40);
+
+    @media (max-width: em(540)) {
+      display: none;
+    }
   }
   &__burger {
     display: flex;
@@ -98,6 +162,10 @@
       &:hover {
         box-shadow: 4px 4px 8px 0px rgba(127, 32, 249, 0.2);
       }
+    }
+
+    @media (max-width: $tablet) {
+      display: none;
     }
   }
 
@@ -146,6 +214,27 @@
     align-items: center;
     justify-content: space-between;
     gap: rem(20);
+
+    @media (max-width: em(540)) {
+      padding: rem(0) rem(0);
+
+      background: #f7f7f7;
+      border-radius: rem(40);
+      gap: rem(10);
+
+      position: fixed;
+      top: -100%;
+      left: rem(15);
+      width: calc(100% - rem(95));
+
+      transition: top 0.3s ease 0s;
+    }
+
+    .menu-open & {
+      @media (max-width: em(540)) {
+        top: rem(12);
+      }
+    }
   }
 
   &__input {
@@ -161,6 +250,12 @@
 
     &:focus {
       outline: none;
+    }
+    @media (max-width: $tablet) {
+      padding-left: rem(12);
+    }
+    @media (max-width: em(540)) {
+      border-radius: rem(40);
     }
   }
 
@@ -224,11 +319,17 @@
 
 .icon-menu {
   display: none;
-  @media (max-width: $mobile) {
+  @media (max-width: $tablet) {
+    align-self: center;
     display: block;
     position: relative;
-    width: rem(30);
-    height: rem(18);
+    flex: 0 0 rem(34);
+    width: rem(34);
+    height: rem(24);
+    padding: rem(10);
+    background-color: #f7f7f7;
+    border-radius: rem(6);
+    box-sizing: content-box;
     cursor: pointer;
     z-index: 5;
     span,
@@ -236,17 +337,19 @@
     &::after {
       content: '';
       transition: all 0.3s ease 0s;
-      right: 0;
+      right: 50%;
       position: absolute;
-      width: 100%;
+      width: calc(100% - rem(20));
       height: rem(2);
-      background-color: #000;
+      background: linear-gradient(120.9deg, #2029f9 34.15%, #7f20f9 68.94%);
+      border-radius: rem(2);
+      transform: translate(50%, 0px);
     }
     &::before {
-      top: 0;
+      top: rem(10);
     }
     &::after {
-      bottom: 0;
+      bottom: rem(10);
     }
     span {
       top: calc(50% - rem(1));
@@ -260,11 +363,11 @@
       }
       &::before {
         top: calc(50% - rem(1));
-        transform: rotate(-45deg);
+        transform: translate(50%, 0px) rotate(-45deg);
       }
       &::after {
         bottom: calc(50% - rem(1));
-        transform: rotate(45deg);
+        transform: translate(50%, 0px) rotate(45deg);
       }
     }
   }

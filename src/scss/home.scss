@@ -18,6 +18,24 @@
       @include adpv('margin-bottom', 1, 64, 30);
     }
   }
+  &__blog {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 69, 30);
+    }
+  }
+  &__banner {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 64, 30);
+    }
+  }
+  &__benefits {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 64, 30);
+    }
+    &:last-child {
+      @include adpv('margin-bottom', 1, 78, 40);
+    }
+  }
 }
 
 //preview block styles
@@ -350,5 +368,222 @@
         background-color: #2029f9;
       }
     }
+  }
+}
+
+// blog block styles
+
+.blog-block {
+  &__container {
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 32, 18);
+    }
+  }
+
+  &__inner {
+    display: grid;
+    @include adpv('gap', 1, 33, 18);
+    row-gap: rem(30) !important;
+    @media (min-width: $mobileSmall) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
+    }
+  }
+
+  &__item {
+  }
+
+  &__image-ibg {
+    padding-bottom: 48.55%;
+    border-radius: rem(18);
+    overflow: hidden;
+
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 24, 10);
+    }
+  }
+
+  &__date {
+    font-size: rem(14);
+    line-height: 143%;
+    color: #726f85;
+  }
+
+  &__text {
+    line-height: 150%;
+    @include adpv('font-size', 1, 16, 14);
+    color: #1a191c;
+  }
+}
+
+// banner block styles
+
+.banner-block {
+  &__inner {
+    border-radius: rem(16);
+    border: 2px solid #2029f8;
+
+    display: grid;
+
+    gap: rem(20);
+
+    @include adpv('min-height', 1, 255, 200);
+
+    @media (min-width: em(641)) {
+      grid-template-columns: 1fr 0.8fr;
+    }
+  }
+
+  &__content {
+    @include adpv('padding', 1, 40, 20);
+    @media (max-width: em(640)) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 32px;
+    @include adpv('font-size', 1, 32, 20);
+    line-height: 130%;
+
+    color: #1a191c;
+    &:not(:last-child) {
+      margin-bottom: rem(8);
+    }
+
+    span {
+      white-space: nowrap;
+    }
+    @media (max-width: em(640)) {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+    }
+
+    @include adpv('font-size', 1, 16, 14);
+    line-height: 150%;
+    color: #726f85;
+    @media (max-width: em(640)) {
+      text-align: center;
+    }
+  }
+
+  &__pay-link {
+    background: linear-gradient(315deg, #ff8a01 16.49%, #9813f0 62.23%);
+    border-radius: rem(100);
+    padding: rem(20) rem(60);
+    font-weight: 500;
+    font-size: rem(16);
+    line-height: 100%;
+    text-align: center;
+    color: #ffffff;
+    display: inline-block;
+
+    transition: transform 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    @media (max-width: em(640)) {
+      align-self: center;
+    }
+    @media (max-width: $mobileSmall) {
+      align-self: stretch;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    pointer-events: none;
+    & img {
+      position: absolute;
+      bottom: rem(12);
+      left: 50%;
+      transform: translate(-50%, 0px);
+      width: rem(280);
+    }
+
+    @media (max-width: em(640)) {
+      display: none;
+    }
+  }
+}
+
+// benefits styles
+
+.benefits-block {
+  &__container {
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 55, 24);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    @include adpv('gap', 1, 124, 40, $containerWidth, 991);
+    flex-wrap: wrap;
+    @include adpv('padding-left', 1, 98, 0, $containerWidth, 480);
+    @include adpv('padding-right', 1, 98, 0, $containerWidth, 480);
+  }
+
+  &__item {
+    flex: 1 0 rem(260);
+    display: flex;
+    flex-direction: column;
+    @media (max-width: $mobileSmall) {
+      flex: 1 1 100%;
+    }
+  }
+
+  &__image-ibg {
+    &_contain {
+      padding-bottom: rem(140);
+      &:not(:last-child) {
+        @include adpv('margin-bottom', 1, 38, 16);
+      }
+
+      @media (max-width: $mobileSmall) {
+        padding-bottom: rem(100);
+      }
+    }
+  }
+
+  &__label {
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: rem(8);
+    }
+
+    font-weight: 700;
+    @include adpv('font-size', 1, 18, 16);
+    line-height: 178%;
+
+    color: #1a191c;
+  }
+
+  &__text {
+    @include adpv('font-size', 1, 16, 14);
+    line-height: 150%;
+    text-align: center;
+    color: #726f85;
+    align-self: center;
+    max-width: rem(400);
   }
 }

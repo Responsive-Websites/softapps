@@ -125,3 +125,132 @@
   &__bottom {
   }
 }
+
+.footer-bottom {
+  &__inner {
+    padding: rem(14) 0px;
+    display: grid;
+
+    gap: rem(20);
+    row-gap: rem(30);
+
+    @media (min-width: $tablet) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(460), 1fr));
+    }
+    @media (max-width: $tablet) {
+      padding: rem(30) 0px;
+    }
+  }
+
+  &__column {
+  }
+
+  &__info {
+    display: grid;
+
+    gap: rem(20);
+    align-items: center;
+    align-content: flex-start;
+
+    @media (min-width: $tablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: $tablet) {
+      justify-content: center;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    gap: rem(16);
+    align-items: flex-start;
+  }
+
+  &__logo-icon {
+    display: block;
+    img {
+      width: rem(115);
+    }
+  }
+
+  &__logo-info {
+    padding: rem(5) 0px;
+    font-size: rem(12);
+    line-height: 117%;
+
+    color: #9b99a8;
+    white-space: nowrap;
+  }
+
+  &__rights {
+    display: flex;
+    gap: rem(24);
+    flex-wrap: wrap;
+    align-items: flex-start;
+    row-gap: rem(0);
+    a {
+      padding: rem(5) 0px;
+      font-size: rem(12);
+      line-height: 177%;
+
+      color: #726f85;
+
+      transition: color 0.3s ease 0s;
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: #6f21f9;
+        }
+      }
+    }
+  }
+
+  &__agree {
+    display: inline-block;
+  }
+
+  &__offer {
+    display: inline-block;
+  }
+
+  &__payment {
+    display: flex;
+    gap: rem(40);
+    @media (max-width: em(1180)) {
+      display: block;
+    }
+  }
+
+  &__payment-title {
+    font-size: rem(12);
+    line-height: 117%;
+    max-width: rem(66);
+    color: #726f85;
+
+    @media (max-width: em(1180)) {
+      max-width: none;
+      text-align: center;
+
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+      }
+    }
+  }
+
+  &__payment-items {
+    display: flex;
+    align-items: center;
+    gap: rem(14);
+    filter: grayscale(100%);
+    opacity: 0.6;
+
+    @media (max-width: em(1180)) {
+      justify-content: center;
+      column-gap: rem(20);
+      flex-wrap: wrap;
+    }
+  }
+
+  &__payment-item {
+  }
+}

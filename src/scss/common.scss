@@ -4,3 +4,102 @@
   line-height: 130%;
   color: #1a191c;
 }
+
+.link-more {
+}
+
+// product card styles
+
+.products-block {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
+  @include adpv('gap', 1, 32, 16);
+  &__item {
+    display: flex;
+    flex-direction: column;
+    @include adpv('padding', 1, 24, 16);
+    position: relative;
+
+    transition: box-shadow 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+      }
+    }
+  }
+
+  &__image-ibg {
+    &_contain {
+      padding-bottom: rem(224);
+      margin-top: rem(20);
+      &:not(:last-child) {
+        margin-bottom: rem(16);
+      }
+    }
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: rem(12);
+    }
+
+    font-weight: 700;
+
+    @include adpv('font-size', 1, 18, 16);
+    line-height: 133%;
+
+    color: #1a191c;
+  }
+
+  &__properties {
+    &:not(:last-child) {
+      margin-bottom: rem(26);
+    }
+    display: grid;
+    gap: rem(4);
+    flex: 1 1 auto;
+  }
+
+  &__property {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: rem(8);
+    row-gap: rem(4);
+  }
+
+  &__option {
+    font-size: rem(14);
+    line-height: 143%;
+    color: #9b99a8;
+  }
+
+  &__value {
+    font-size: rem(14);
+    line-height: 143%;
+    color: #1a191c;
+  }
+
+  &__price {
+    font-weight: 700;
+
+    @include adpv('font-size', 1, 24, 20);
+    line-height: 133%;
+
+    color: #1a191c;
+  }
+
+  &__novelty {
+    @include adpv('top', 1, 24, 16);
+    @include adpv('left', 1, 24, 16);
+    position: absolute;
+    background: #5db41a;
+    border-radius: rem(4);
+    padding: rem(4) rem(9);
+
+    font-size: rem(12);
+    line-height: 117%;
+    color: #ffffff;
+  }
+}

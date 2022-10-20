@@ -182,6 +182,24 @@
             </div>
           </div>
         </section>
+
+        <section class="page__popular-products popular-products">
+          <div class="popular-products__container">
+            <div class="popular-products__heading">
+              <h3 class="popular-products__title title-section">Популярные товары</h3>
+              <div class="popular-products__filters">
+                <button type="button" class="popular-products__filter _active">Все</button>
+                <button type="button" class="popular-products__filter">Microsoft Windows</button>
+                <button type="button" class="popular-products__filter">Microsoft Office</button>
+                <button type="button" class="popular-products__filter">Антивирусы</button>
+              </div>
+            </div>
+            <div class="popular-products__inner">@@include('html/_products.htm',{})</div>
+            <div class="popular-products__more">
+              <a href="catalog.html" class="popular-products__link-more link-more">Показать ещё</a>
+            </div>
+          </div>
+        </section>
       </main>
       @@include('html/_footer.htm',{})
     </div>

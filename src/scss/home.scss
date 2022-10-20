@@ -1,1 +1,61 @@
-//home page styles
+.page {
+  &__preview-slider {
+    &:first-child {
+      @include adpv('margin-top', 1, 55, 30);
+    }
+  }
+}
+.preview-slider {
+  &__container {
+  }
+
+  &__inner {
+  }
+
+  &__slider {
+    border-radius: rem(16);
+  }
+
+  &__wrapper {
+  }
+
+  &__slide {
+    border-radius: rem(16);
+    overflow: hidden;
+  }
+
+  &__slide-wrapper {
+    position: relative;
+  }
+  &__content {
+    @include adpv('padding', 1, 46, 20);
+    @include adpv('padding-left', 1, 100, 60);
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    flex: 1 1 auto;
+    font-weight: 700;
+    @include adpv('font-size', 1, 44, 20);
+    line-height: 130%;
+    color: #1a191c;
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+  &__link {
+    align-self: flex-start;
+    display: inline-block;
+    background: linear-gradient(315deg, #ff8a01 16.49%, #9813f0 62.23%);
+    border-radius: rem(100);
+    padding: rem(20) rem(32);
+    text-align: center;
+    font-weight: 500;
+    font-size: rem(16);
+    line-height: 100%;
+    color: #ffffff;
+  }
+  &__image {
+    z-index: -1;
+  }
+}

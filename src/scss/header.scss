@@ -1,4 +1,6 @@
 .header {
+  position: relative;
+  z-index: 2;
   &__container {
   }
 
@@ -135,6 +137,7 @@
 .desktop-menu {
   &__inner {
     position: relative;
+    z-index: 4;
   }
   &__wrapper {
     position: relative;
@@ -287,7 +290,7 @@
     top: 0px;
     left: 0px;
     transition: all 0.2s ease 0s;
-
+    z-index: 4;
     &._active {
       top: calc(100% + rem(10));
       visibility: visible;

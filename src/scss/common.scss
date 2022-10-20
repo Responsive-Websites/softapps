@@ -1,1 +1,6 @@
-// Заголовки, общие БЄМ блоки и проче...
+.title-section {
+  font-weight: 700;
+  @include adpv('font-size', 1, 32, 18);
+  line-height: 130%;
+  color: #1a191c;
+}

@@ -3,8 +3,20 @@
     &:first-child {
       @include adpv('margin-top', 1, 55, 30);
     }
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 46, 30);
+    }
+  }
+
+  &__categories {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 60, 30);
+    }
   }
 }
+
+//preview block styles
+
 .preview-slider {
   &__container {
   }
@@ -161,5 +173,93 @@
       @include adpv('width', 1, 12, 8);
       @include adpv('height', 1, 12, 8);
     }
+  }
+}
+
+// categories styles
+
+.categories-home {
+  &__container {
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: rem(16);
+    }
+  }
+
+  &__inner {
+    display: grid;
+
+    @include adpv('gap', 1, 24, 18);
+
+    @media (min-width: $mobileSmall) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(310), 1fr));
+    }
+  }
+
+  &__item {
+    position: relative;
+    border-radius: rem(16);
+    overflow: hidden;
+
+    @include adpv('padding', 1, 25, 18);
+    @include adpv('min-height', 1, 312, 200);
+
+    transition: box-shadow 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:nth-child(1):hover {
+        box-shadow: 4px 4px 8px 0px #4a52e857;
+      }
+      &:nth-child(2):hover {
+        box-shadow: 4px 4px 8px 0px #ec3c3654;
+      }
+      &:nth-child(3):hover {
+        box-shadow: 4px 4px 8px 0px #9de03850;
+      }
+
+      &:nth-child(4):hover {
+        box-shadow: 4px 4px 8px 0px #9a56ff54;
+      }
+      &:nth-child(5):hover {
+        box-shadow: 4px 4px 8px 0px #bb636165;
+      }
+      &:nth-child(6):hover {
+        box-shadow: 4px 4px 8px 0px #785afe56;
+      }
+    }
+  }
+
+  &__label {
+    font-weight: 700;
+
+    @include adpv('font-size', 1, 24, 18);
+    line-height: 133%;
+
+    color: #1a191c;
+    &:not(:last-child) {
+      margin-bottom: rem(8);
+    }
+    position: relative;
+    z-index: 1;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: rem(8);
+    position: relative;
+    z-index: 1;
+  }
+
+  &__tag {
+    border: 1px solid rgba(21, 14, 64, 0.5);
+    border-radius: rem(28);
+    padding: rem(7) rem(12);
+  }
+
+  &__image {
   }
 }

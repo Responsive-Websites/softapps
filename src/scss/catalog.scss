@@ -1,6 +1,8 @@
 .page {
-  @include adpv('margin-top', 1, 64, 30);
-  @include adpv('margin-bottom', 1, 83, 40);
+  &_mod {
+    @include adpv('margin-top', 1, 64, 30);
+    @include adpv('margin-bottom', 1, 83, 40);
+  }
   &__breadcrumps {
     &:not(:last-child) {
       @include adpv('margin-bottom', 1, 34, 20);

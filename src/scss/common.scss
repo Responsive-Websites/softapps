@@ -5,9 +5,6 @@
   color: #1a191c;
 }
 
-.link-more {
-}
-
 // product card styles
 
 .products-block {
@@ -101,5 +98,51 @@
     font-size: rem(12);
     line-height: 117%;
     color: #ffffff;
+  }
+}
+
+// breadcrumps styles
+.breadcrumps-block {
+  &__container {
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: rem(20);
+    overflow-x: auto;
+    padding-bottom: rem(10);
+
+    font-size: rem(14);
+    line-height: 143%;
+  }
+  &__past {
+    position: relative;
+    white-space: nowrap;
+    color: #9b99a8;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: rem(-10);
+      width: rem(4);
+      height: rem(4);
+      border-radius: 50%;
+      background-color: #9b99a8;
+
+      transform: translate(2px, -50%);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__active {
+    white-space: nowrap;
+    color: #150e40;
+    pointer-events: none;
   }
 }

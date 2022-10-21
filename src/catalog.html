@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/_head.htm',{ "title":"Каталог товаров" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="page">
+        <div class="page__breadcrumps">@@include('html/_breadcrumps.htm',{})</div>
+        <div class="page__categories-slider slider-categories">
+          <div class="slider-categories__container">
+            <div class="slider-categories__slider swiper">
+              <div class="slider-categories__wrapper swiper-wrapper">
+                <div class="slider-categories__slide swiper-slide">
+                  <div class="slider-categories__inner">
+                    <p class="slider-categories__title">Office</p>
+                    <p class="slider-categories__value">20 товаров</p>
+                    <img
+                      src="@img/catalog/slider-catalog/1.jpg"
+                      alt="image"
+                      class="slider-categories__image background-image"
+                    />
+                  </div>
+                </div>
+                <div class="slider-categories__slide swiper-slide">
+                  <div class="slider-categories__inner">
+                    <p class="slider-categories__title">Антивирусы</p>
+                    <p class="slider-categories__value">10 товаров</p>
+                    <img
+                      src="@img/catalog/slider-catalog/2.jpg"
+                      alt="image"
+                      class="slider-categories__image background-image"
+                    />
+                  </div>
+                </div>
+                <div class="slider-categories__slide swiper-slide">
+                  <div class="slider-categories__inner">
+                    <p class="slider-categories__title">
+                      Офисные <br />
+                      приложения
+                    </p>
+                    <p class="slider-categories__value">10 товаров</p>
+                    <img
+                      src="@img/catalog/slider-catalog/3.jpg"
+                      alt="image"
+                      class="slider-categories__image background-image"
+                    />
+                  </div>
+                </div>
+                <div class="slider-categories__slide swiper-slide">
+                  <div class="slider-categories__inner">
+                    <p class="slider-categories__title">Комплекты</p>
+                    <p class="slider-categories__value">5 товаров</p>
+                    <img
+                      src="@img/catalog/slider-catalog/4.jpg"
+                      alt="image"
+                      class="slider-categories__image background-image"
+                    />
+                  </div>
+                </div>
+                <div class="slider-categories__slide swiper-slide">
+                  <div class="slider-categories__inner">
+                    <p class="slider-categories__title">Комплекты</p>
+                    <p class="slider-categories__value">5 товаров</p>
+                    <img
+                      src="@img/catalog/slider-catalog/2.jpg"
+                      alt="image"
+                      class="slider-categories__image background-image"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="slider-categories__button-prev"></button>
+            <button type="button" class="slider-categories__button-next"></button>
+          </div>
+        </div>
+      </main>
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{}) @@include('html/_js.htm',{})
+  </body>
+</html>

@@ -3,31 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Верстка «NEW_PROJECT_NAME»</title>
-    <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml" />
+    <title>«NEW_PROJECT_NAME»</title>
+    <link rel="icon" href="@img/favicon.svg" sizes="any" type="image/svg+xml" />
   </head>
   <body>
     <div class="rootpage">
-      <h1>Верстка «NEW_PROJECT_NAME»</h1>
-      <div class="rootpage__info">Особенности проекта</div>
-      <h2>Готовые страницы:</h2>
-      <ol class="rootpage__list">
-        <li><a target="_blank" href="home.html">Главная</a></li>
-        <li><a target="_blank" href="catalog.html">Каталог</a></li>
-        <li><a target="_blank" href="product.html">Страница продукта</a></li>
-      </ol>
+      <h1>Верстка сайта «NEW_PROJECT_NAME»</h1>
 
       <div class="rootpage__tnx">
         <h2>Спасибо за заказ!</h2>
         <p>Буду рад (а) хорошему отзыву.</p>
         <p>Обращайтесь еще!</p>
       </div>
-      <div class="rootpage__contacts">
-        <h2>Мои контакты:</h2>
-        <p>Почта: <a href="mailto:email@gmail.com">email@gmail.com</a></p>
-        <p>Телефон: <a href="tel:8800800800">8 800 800 800</a></p>
-        <p>Соц. сеть: <a href="">ссылка на соц. сеть</a></p>
-      </div>
+
+      <h2>Готовые страницы:</h2>
+      <ol class="rootpage__list">
+        <li><a target="_blank" href="home.html">Главная</a></li>
+        <li><a target="_blank" href="catalog.html">Каталог</a></li>
+        <li><a target="_blank" href="product.html">Страница продукта</a></li>
+      </ol>
     </div>
   </body>
   <style>
@@ -49,7 +43,7 @@
       min-width: 320px;
       width: 100%;
       color: #fff;
-      background-color: #5e5373;
+      background: linear-gradient(120.9deg, #b4490a 34.15%, #7f20f9 68.94%);
     }
     body {
       font-family: Montserrat;
@@ -59,11 +53,11 @@
     }
     a {
       text-decoration: underline;
-      color: #ebe691;
+      color: #fff;
     }
     a:visited {
       text-decoration: underline;
-      color: #aaa768;
+      color: #fff;
     }
     a:hover {
       text-decoration: none;
@@ -91,18 +85,13 @@
       }
     }
     h1 {
-      color: #ebe691;
+      color: #fff;
       font-size: 2.5rem;
-      margin: 0px 0px 1.25rem 0px;
+      margin: 130px 0px 2.25rem 0px;
     }
-    @media (max-width: 767px) {
-      h1 {
-        font-size: 1.85rem;
-        margin: 0px 0px 1.25rem 0px;
-      }
-    }
+
     h2 {
-      color: #ebe691;
+      color: #fff;
       font-size: 1.25rem;
       margin: 0px 0px 1rem 0px;
     }
@@ -125,14 +114,14 @@
     }
     .rootpage__contacts,
     .rootpage__tnx {
-      border-radius: 200px;
+      border-radius: 20px;
       padding: 20px 65px;
       line-height: 140%;
     }
     @media (max-width: 767px) {
       .rootpage__contacts,
       .rootpage__tnx {
-        border-radius: 40px;
+        border-radius: 20px;
         padding: 20px;
       }
     }
@@ -143,8 +132,8 @@
       color: #ebe691;
     }
     .rootpage__tnx {
-      background: #c22d63;
-      margin: 0px 0px 1rem 0px;
+      background: linear-gradient(120.9deg, #b4721b86 34.15%, #7f20f9 68.94%);
+      margin: 0px 0px 2rem 0px;
     }
   </style>
 </html>

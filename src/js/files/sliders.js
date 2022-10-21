@@ -30,7 +30,7 @@ function initSliders() {
   if (document.querySelector('.swiper')) {
     // Указываем скласс нужного слайдера
     // Создаем слайдер
-    new Swiper('.preview-slider__slider', {
+    const mainSlider = new Swiper('.preview-slider__slider', {
       // Указываем скласс нужного слайдера
       // Подключаем модули слайдера
       // для конкретного случая
@@ -101,7 +101,7 @@ function initSliders() {
       // События
       on: {},
     });
-    new Swiper('.slider-categories__slider', {
+    const categoriesSlider = new Swiper('.slider-categories__slider', {
       // Указываем скласс нужного слайдера
       // Подключаем модули слайдера
       // для конкретного случая
@@ -204,9 +204,4 @@ function initSlidersScroll() {
   }
 }
 
-window.addEventListener('load', function (e) {
-  // Запуск инициализации слайдеров
-  initSliders();
-  // Запуск инициализации скролла на базе слайдера (по классу swiper_scroll)
-  //initSlidersScroll();
-});
+initSliders();

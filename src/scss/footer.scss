@@ -17,6 +17,8 @@
     @media (max-width: $tablet) {
       row-gap: rem(40);
     }
+    @media (max-width: em(560)) {
+    }
   }
 
   &__column {
@@ -26,8 +28,9 @@
       flex: 1 1 calc(50% - rem(20));
     }
 
-    @media (max-width: em(560)) {
+    @media (max-width: rem(560)) {
       flex: 1 1 100%;
+      width: 100%;
     }
   }
 
@@ -54,6 +57,7 @@
       position: relative;
       padding-left: rem(30);
       padding-right: rem(30);
+      width: 100%;
       &::before {
         display: block;
         position: absolute;

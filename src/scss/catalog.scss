@@ -1,33 +1,46 @@
 .page {
+  @include adpv('margin-top', 1, 64, 30);
+  @include adpv('margin-bottom', 1, 83, 40);
   &__breadcrumps {
-    @include adpv('margin-top', 1, 64, 30);
     &:not(:last-child) {
       @include adpv('margin-bottom', 1, 34, 20);
     }
   }
   &__categories-slider {
     &:not(:last-child) {
-      @include adpv('margin-top', 1, 44, 30);
+      @include adpv('margin-bottom', 1, 44, 30);
+    }
+  }
+  &__catalog-products {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 44, 30);
     }
   }
 }
 
-// categories slider
+// categories slider styles
 
 .slider-categories {
   &__container {
     position: relative;
+    margin: rem(-24) auto;
   }
 
   &__slider {
+    padding: rem(12) 0px;
   }
 
   &__wrapper {
   }
 
   &__slide {
+    transition: box-shadow 0.3s ease 0s;
     border-radius: rem(16);
-    overflow: hidden;
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+      }
+    }
   }
 
   &__inner {
@@ -35,6 +48,9 @@
     min-height: rem(102);
     padding: rem(30);
     height: 100%;
+
+    border-radius: rem(16);
+    overflow: hidden;
   }
 
   &__title {
@@ -122,5 +138,65 @@
         transform: translate(0px, -50%) scale(1.2);
       }
     }
+  }
+}
+
+// catalog products styles
+
+.catalog-products {
+  &__container {
+  }
+
+  &__heading {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 48, 26);
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    @include adpv('font-size', 1, 44, 18);
+    line-height: 130%;
+    color: #1a191c;
+    &:not(:last-child) {
+      margin-bottom: rem(16);
+    }
+
+    @media (max-width: $tablet) {
+      text-align: center;
+    }
+  }
+
+  &__filters {
+    display: flex;
+    align-items: flex-start;
+    gap: rem(16);
+    row-gap: rem(10);
+    flex-wrap: wrap;
+    @media (max-width: $tablet) {
+      justify-content: center;
+    }
+  }
+
+  &__filter {
+    padding: rem(4) rem(16);
+    @include adpv('font-size', 1, 16, 14);
+    line-height: 150%;
+
+    transition: color 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #2029f9;
+      }
+    }
+    &._active {
+      background: #2029f9;
+      border-radius: rem(8);
+      color: #ffffff;
+    }
+  }
+
+  &__products {
   }
 }
